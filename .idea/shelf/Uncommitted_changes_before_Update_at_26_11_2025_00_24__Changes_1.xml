@@ -1,0 +1,24 @@
+<changelist name="Uncommitted_changes_before_Update_at_26_11_2025_00_24_[Changes]1" date="1764116668327" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_11_2025_00_24_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 26/11/2025 00:24 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/TrabalhoPratico.exe" />
+    <option name="AFTER_PATH" value="cmake-build-debug/TrabalhoPratico.exe" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_11_2025_00_24_[Changes]1/TrabalhoPratico.exe" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/TrabalhoPratico.dir/Comandos/comandojardim.cpp.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/TrabalhoPratico.dir/Comandos/comandojardim.cpp.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_11_2025_00_24_[Changes]1/comandojardim.cpp.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/TrabalhoPratico.dir/interpretador.cpp.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/TrabalhoPratico.dir/interpretador.cpp.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_11_2025_00_24_[Changes]1/interpretador.cpp.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/.ninja_deps" />
+    <option name="AFTER_PATH" value="cmake-build-debug/.ninja_deps" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_11_2025_00_24_[Changes]1/.ninja_deps" />
+  </binary>
+</changelist>

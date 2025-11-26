@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.29"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "TrabalhoPratico",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "TrabalhoPratico::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TrabalhoPratico-Debug-44a79d5d6c4eada10c3f.json",
+					"name" : "TrabalhoPratico",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Utilizador/Documents/Faculdade/5 ano/1o Semestre/POO/TrabalhoPratico_Gloria/TrabalhoPratico/cmake-build-debug",
+		"source" : "C:/Users/Utilizador/Documents/Faculdade/5 ano/1o Semestre/POO/TrabalhoPratico_Gloria/TrabalhoPratico"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

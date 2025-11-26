@@ -1,0 +1,3 @@
+C:/Users/Utilizador/Documents/Faculdade/5 ano/1o Semestre/POO/TrabalhoPratico_Gloria/TrabalhoPratico/cmake-build-debug/CMakeFiles/TrabalhoPratico.dir
+C:/Users/Utilizador/Documents/Faculdade/5 ano/1o Semestre/POO/TrabalhoPratico_Gloria/TrabalhoPratico/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Utilizador/Documents/Faculdade/5 ano/1o Semestre/POO/TrabalhoPratico_Gloria/TrabalhoPratico/cmake-build-debug/CMakeFiles/rebuild_cache.dir

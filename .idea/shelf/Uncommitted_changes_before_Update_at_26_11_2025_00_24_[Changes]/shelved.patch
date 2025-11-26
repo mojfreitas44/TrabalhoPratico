@@ -1,0 +1,34 @@
+Index: cmake-build-debug/Testing/Temporary/LastTest.log
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>Start testing: Nov 26 00:05 Hora padr�o de GMT\r\n----------------------------------------------------------\r\nEnd testing: Nov 26 00:05 Hora padr�o de GMT\r\n
+===================================================================
+diff --git a/cmake-build-debug/Testing/Temporary/LastTest.log b/cmake-build-debug/Testing/Temporary/LastTest.log
+--- a/cmake-build-debug/Testing/Temporary/LastTest.log	(revision 74f59dc22320e8a4d79b900f33f458933d27fc1d)
++++ b/cmake-build-debug/Testing/Temporary/LastTest.log	(date 1764116558204)
+@@ -1,3 +1,3 @@
+-Start testing: Nov 26 00:05 Hora padr�o de GMT
++Start testing: Nov 26 00:22 Hora padr�o de GMT
+ ----------------------------------------------------------
+-End testing: Nov 26 00:05 Hora padr�o de GMT
++End testing: Nov 26 00:22 Hora padr�o de GMT
+Index: cmake-build-debug/.ninja_log
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># ninja log v6\r\n60\t1983\t7858152693307803\tCMakeFiles/TrabalhoPratico.dir/interpretador.cpp.obj\t1a0aa8f8a541c7e6\r\n11\t773\t7858177049845289\tCMakeFiles/TrabalhoPratico.dir/Solo.cpp.obj\t627f5d0d3cf4dcbc\r\n89\t1846\t7858152693588334\tCMakeFiles/TrabalhoPratico.dir/Comandos/comandojardim.cpp.obj\t61c883856eea458d\r\n32\t1765\t7858152693026271\tCMakeFiles/TrabalhoPratico.dir/main.cpp.obj\t3e0dee65090109fc\r\n1134\t1382\t7858179163726028\tTrabalhoPratico.exe\t946fb9aa1e205f43\r\n102\t721\t7858152693728170\tCMakeFiles/TrabalhoPratico.dir/Plantas/cacto.cpp.obj\t5cf33f7d54fb54d1\r\n109\t705\t7858152693798176\tCMakeFiles/TrabalhoPratico.dir/Plantas/roseira.cpp.obj\tcfa92485f06a7fe3\r\n695\t889\t7858152699650047\tCMakeFiles/TrabalhoPratico.dir/Plantas/erva.cpp.obj\t98b978599d396257\r\n889\t2093\t7858152701590648\tCMakeFiles/TrabalhoPratico.dir/Comandos/comandoavanca.cpp.obj\t5da3b316ad5b13c7\r\n95\t694\t7858152693652926\tCMakeFiles/TrabalhoPratico.dir/Plantas/plantas.cpp.obj\tc426d6dbac26ae22\r\n71\t1425\t7858152693413122\tCMakeFiles/TrabalhoPratico.dir/Jardim/posicao.cpp.obj\ted4c2a1a26c651ca\r\n1536\t1731\t7858152708066005\tCMakeFiles/TrabalhoPratico.dir/Ferramentas/tesoura.cpp.obj\t250604b1724c30a5\r\n20\t1134\t7858179152582524\tCMakeFiles/TrabalhoPratico.dir/Comandos/comandoplantas.cpp.obj\tbc175664537d8ea2\r\n83\t1715\t7858152693528381\tCMakeFiles/TrabalhoPratico.dir/Comandos/comando.cpp.obj\td1fdcaedef7cd79f\r\n65\t1772\t7858152693357931\tCMakeFiles/TrabalhoPratico.dir/Jardim/jardim.cpp.obj\tbc6943a4d8eb9082\r\n2\t215\t7858181849109784\tbuild.ninja\tce0d83269d1feba8\r\n721\t2000\t7858152699915681\tCMakeFiles/TrabalhoPratico.dir/Comandos/comandojardineiro.cpp.obj\t8e44ce6111eb737a\r\n1731\t2549\t7858152710012414\tCMakeFiles/TrabalhoPratico.dir/Comandos/comandoferramentas.cpp.obj\t57d11e83ec407b44\r\n1387\t1536\t7858152706571238\tCMakeFiles/TrabalhoPratico.dir/Ferramentas/ferramentas.cpp.obj\t82f5df435cabf9ff\r\n1571\t1740\t7858152708412214\tCMakeFiles/TrabalhoPratico.dir/Ferramentas/adubo.cpp.obj\ta652f16c9b8b8e6a\r\n1425\t1571\t7858152706952629\tCMakeFiles/TrabalhoPratico.dir/Ferramentas/regador.cpp.obj\t871ec9aef2a96b05\r\n1715\t1842\t7858152709851897\tCMakeFiles/TrabalhoPratico.dir/Ferramentas/gadanha.cpp.obj\t50658a49c467e6a5\r\n1741\t2236\t7858152710107680\tCMakeFiles/TrabalhoPratico.dir/jardineiro.cpp.obj\t70368375ef26621\r\n18\t350\t7858183131177381\tCMakeFiles/TrabalhoPratico.dir/Plantas/roseira.cpp.obj\tcfa92485f06a7fe3\r\n49\t379\t7858183131499026\tCMakeFiles/TrabalhoPratico.dir/Plantas/Exotica.cpp.obj\t6112b8102dfd9d73\r\n44\t946\t7858183131443997\tCMakeFiles/TrabalhoPratico.dir/Comandos/comandoplantas.cpp.obj\tbc175664537d8ea2\r\n946\t1218\t7858183140458825\tTrabalhoPratico.exe\t6da38324a5460295\r\n45\t1110\t7858184201733199\tCMakeFiles/TrabalhoPratico.dir/Comandos/comandoplantas.cpp.obj\tbc175664537d8ea2\r\n18\t1187\t7858184201462988\tCMakeFiles/TrabalhoPratico.dir/interpretador.cpp.obj\t1a0aa8f8a541c7e6\r\n1187\t1439\t7858184213147732\tTrabalhoPratico.exe\t6da38324a5460295\r\n20\t927\t7858184735844700\tCMakeFiles/TrabalhoPratico.dir/Comandos/comandoplantas.cpp.obj\tbc175664537d8ea2\r\n928\t1170\t7858184744918585\tTrabalhoPratico.exe\t6da38324a5460295\r\n
+===================================================================
+diff --git a/cmake-build-debug/.ninja_log b/cmake-build-debug/.ninja_log
+--- a/cmake-build-debug/.ninja_log	(revision 74f59dc22320e8a4d79b900f33f458933d27fc1d)
++++ b/cmake-build-debug/.ninja_log	(date 1764116558079)
+@@ -31,3 +31,11 @@
+ 1187	1439	7858184213147732	TrabalhoPratico.exe	6da38324a5460295
+ 20	927	7858184735844700	CMakeFiles/TrabalhoPratico.dir/Comandos/comandoplantas.cpp.obj	bc175664537d8ea2
+ 928	1170	7858184744918585	TrabalhoPratico.exe	6da38324a5460295
++36	1008	7858197011190030	CMakeFiles/TrabalhoPratico.dir/Comandos/comandojardim.cpp.obj	61c883856eea458d
++41	1026	7858197011245244	CMakeFiles/TrabalhoPratico.dir/Comandos/comandoplantas.cpp.obj	bc175664537d8ea2
++9	1107	7858197010919149	CMakeFiles/TrabalhoPratico.dir/interpretador.cpp.obj	1a0aa8f8a541c7e6
++1107	1364	7858197021894000	TrabalhoPratico.exe	6da38324a5460295
++16	934	7858197308978957	CMakeFiles/TrabalhoPratico.dir/Comandos/comandojardim.cpp.obj	61c883856eea458d
++935	1176	7858197318163172	TrabalhoPratico.exe	6da38324a5460295
++18	925	7858197569288140	CMakeFiles/TrabalhoPratico.dir/Comandos/comandojardim.cpp.obj	61c883856eea458d
++926	1168	7858197578369244	TrabalhoPratico.exe	6da38324a5460295
