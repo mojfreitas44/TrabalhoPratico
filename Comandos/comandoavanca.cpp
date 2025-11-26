@@ -8,8 +8,8 @@
 #include <iostream>
 using namespace std;
 
-bool Comandoavanca::executar(Jardim*& jardim, std::stringstream& parametros) {
-    cout << "DEBUG: Executando comando '" << nomeComando << "'" << endl;
+bool Comandoavanca::executar(Jardim*& jardim, stringstream& parametros) {
+    //cout << "DEBUG: Executando comando '" << nomeComando << "'" << endl;
 
     if (nomeComando == "avanca") {
         int n = 1;
@@ -20,8 +20,13 @@ bool Comandoavanca::executar(Jardim*& jardim, std::stringstream& parametros) {
             return false;
         }
 
-        static int plantasEsteTurno = 0;
-        static int colheitasEsteTurno = 0;
+        // Simular N instantes
+        for (int i = 0; i < n; i++) {
+            // AQUI ENTRARÁ A SIMULAÇÃO DAS PLANTAS (FUTURO)
+            // jardim->simularInstante();
+        }
+
+        jardim->getJardineiro()->resetarAcoes();
 
         cout << "Avancou " << n << " instante(s)." << endl;
         return true;

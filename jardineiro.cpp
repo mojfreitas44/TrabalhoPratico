@@ -1,11 +1,9 @@
-//
-// Created by Rodrigo on 17/11/2025.
-//
 #include "jardineiro.h"
 #include "Ferramentas/ferramentas.h"
+#include "Settings.h"
 Jardineiro::Jardineiro()
         : dentroDoJardim(false), linha(0), coluna(0),
-          ferramentaNaMao(nullptr), movimentosFeitos(0), plantasPlantadas(0) {}
+          ferramentaNaMao(nullptr), movimentosFeitos(0), plantasPlantadas(0),plantasColhidas(0) {}
 
 Jardineiro::~Jardineiro() {
     // Limpar a memória das ferramentas na mochila
@@ -58,6 +56,7 @@ void Jardineiro::largarFerramenta() {
 void Jardineiro::resetarAcoes() {
     movimentosFeitos = 0;
     plantasPlantadas = 0;
+    plantasColhidas = 0;
 }
 
 bool Jardineiro::podeMover() const {
@@ -65,7 +64,13 @@ bool Jardineiro::podeMover() const {
     return movimentosFeitos < 10;
 }
 
+bool Jardineiro::podeColher() const {
+    return plantasColhidas < Settings::Jardineiro::max_colheitas;
+}
 
+void Jardineiro::registarColheita() {
+    plantasColhidas++;
+}
 
 void Jardineiro::registarMovimento() {
     movimentosFeitos++;

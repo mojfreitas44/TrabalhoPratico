@@ -27,5 +27,6 @@ Jardim/jardim.cpp
         Comandos/comandoferramentas.cpp
         jardineiro.cpp
         Plantas/Exotica.cpp
+        Comandos/comandocolhe.cpp
 
 )

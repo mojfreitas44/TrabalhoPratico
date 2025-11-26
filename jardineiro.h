@@ -5,11 +5,7 @@
 #ifndef TRABALHOPRATICO_JARDINEIRO_H
 #define TRABALHOPRATICO_JARDINEIRO_H
 
-
-
-
 #include <vector>
-
 
 class Ferramentas;
 
@@ -22,6 +18,7 @@ private:
     int movimentosFeitos;
     int plantasPlantadas;
     std::vector <Ferramentas*> mochila;
+    int plantasColhidas;
 
 public:
     Jardineiro();
@@ -47,6 +44,9 @@ public:
     void resetarAcoes();
     bool podeMover() const;
     void registarMovimento();
+
+    bool podeColher() const;
+    void registarColheita();
 
 };
 
