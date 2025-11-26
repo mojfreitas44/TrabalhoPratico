@@ -110,7 +110,7 @@ void Jardim::reporFerramenta() {
         // cout << "DEBUG: Nova ferramenta apareceu em " << l << "," << c << endl;
     }
 }
-
+//
 void Jardim::inicializarFerramentas() {
     int tipoFerramentas = 4;
     int areaTotal = linhas * colunas;
