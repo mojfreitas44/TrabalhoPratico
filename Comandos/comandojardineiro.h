@@ -14,11 +14,11 @@
 class comandojardineiro : public Comando {
 private:
     std::string nomeComando;
-
+    void processarEntradaNaPosicao(Jardim* jardim, Jardineiro* j, int l, int c);
 public:
     comandojardineiro(const std::string& nome) : nomeComando(nome) {}
 
-    std::string getNome() const override { return nomeComando; }
+    string getNome() const override { return nomeComando; }
     bool executar(Jardim*& jardim, std::stringstream& parametros) override;
 
 

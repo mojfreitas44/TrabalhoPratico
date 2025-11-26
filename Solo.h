@@ -21,5 +21,6 @@ public:
     void iniciarAleatorio();
     void setFerramenta(Ferramentas* f);
     Ferramentas * getFerramenta() const;
+    Ferramentas* retirarFerramenta();
 };
 #endif //SOLO_H

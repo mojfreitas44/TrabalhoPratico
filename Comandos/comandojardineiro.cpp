@@ -3,9 +3,32 @@
 //
 
 #include "comandojardineiro.h"
+#include "../Solo.h"
 #include <sstream>
 #include <iostream>
 using namespace std;
+
+void comandojardineiro::processarEntradaNaPosicao(Jardim* jardim, Jardineiro* j, int l, int c) {
+    // Atualizar posição do jardineiro
+    j->setPosicao(l, c);
+
+    // Verificar se há ferramenta no chão
+    Solo* solo = jardim->getSolo(l, c);
+
+    // Se houver ferramenta, retiramo-la com segurança
+    if (solo->getFerramenta() != nullptr) {
+
+        // CORREÇÃO: Usar o novo método que não faz delete
+        Ferramentas* f = solo->retirarFerramenta();
+
+        // Jardineiro guarda na mochila
+        j->apanharFerramenta(f);
+
+        cout << "Apanhou ferramenta: " << f->getTipo() << " (ID: " << f->getID() << ")" << endl;
+
+        jardim->reporFerramenta();
+    }
+}
 
 bool comandojardineiro::executar(Jardim*& jardim, std::stringstream& parametros) {
     cout << "DEBUG: Executando comando '" << nomeComando << "'" << endl;
@@ -23,6 +46,7 @@ bool comandojardineiro::executar(Jardim*& jardim, std::stringstream& parametros)
                     // 2. Usar o método do Jardineiro
                     j->entrar(p.getLinha(), p.getColuna());
                     cout << "Entrou na posicao " << pos << "." << endl;
+                    processarEntradaNaPosicao(jardim, j, p.getLinha(), p.getColuna());
                     return true;
                 } else {
                     cout << "Posicao " << pos << " fora dos limites do jardim." << endl;
@@ -72,6 +96,7 @@ bool comandojardineiro::executar(Jardim*& jardim, std::stringstream& parametros)
             j->setPosicao(l, c);
             j->registarMovimento(); // Importante para contar ações
             cout << "Movimento " << nomeComando << " executado." << endl;
+            processarEntradaNaPosicao(jardim, j, l, c);
             return true;
         } else {
             cout << "Movimento impossivel (limites do jardim)." << endl;

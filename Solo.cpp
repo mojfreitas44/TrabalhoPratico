@@ -51,3 +51,8 @@ Plantas * Solo::getPlanta() const {
 Ferramentas * Solo::getFerramenta() const {
     return ferramenta;
 }
+Ferramentas* Solo::retirarFerramenta() {
+    Ferramentas* temp = ferramenta;
+    ferramenta = nullptr; // Desliga a ferramenta do solo sem a apagar
+    return temp;
+}

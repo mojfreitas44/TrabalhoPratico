@@ -83,6 +83,34 @@ void Jardim::desenhar() const {
     cout << "-+" << endl; // <-- SÓ 1 endl no fim
 }
 
+void Jardim::reporFerramenta() {
+    int l, c;
+    Solo* soloAlvo;
+
+    // Procura uma posição vazia aleatória
+    // Nota: Num jardim muito cheio isto pode demorar, mas para já serve
+    do {
+        l = rand() % linhas;
+        c = rand() % colunas;
+        soloAlvo = getSolo(l, c);
+    } while (!soloAlvo->estaVazio() || soloAlvo->getFerramenta() != nullptr);
+
+    int tipo = rand() % 4; // 0 a 3
+    Ferramentas *novaFerramenta = nullptr;
+
+    switch (tipo) {
+        case 0: novaFerramenta = new Regador(); break;
+        case 1: novaFerramenta = new Adubo(); break;
+        case 2: novaFerramenta = new Tesoura(); break;
+        case 3: novaFerramenta = new Gadanha(); break;
+    }
+
+    if (novaFerramenta != nullptr) {
+        soloAlvo->setFerramenta(novaFerramenta);
+        // cout << "DEBUG: Nova ferramenta apareceu em " << l << "," << c << endl;
+    }
+}
+
 void Jardim::inicializarFerramentas() {
     int tipoFerramentas = 4;
     // Vamos por 3 ferramentas no mapa
