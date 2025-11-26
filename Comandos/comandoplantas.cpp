@@ -69,7 +69,7 @@ bool ComandoPlanta::executar(Jardim*& jardim, std::stringstream& parametros)  {
 
             if (novaPlanta != nullptr) {
                 solo->setPlanta(novaPlanta);
-                // Usa o metodo getTipo() da planta acabada de criar para confirmar
+                // Usa o metodo getTipo() da planta acabada de criar para confirmar.
                 cout << "Plantou " << nome << " (" << novaPlanta->getTipo() << ") na posicao "
                      << posStr << endl;
                 return true;
