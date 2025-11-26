@@ -19,11 +19,6 @@ bool ComandoJardim::executar(Jardim*& jardim, stringstream& parametros){
             cout << "Dimensoes invalidas. Linhas e colunas devem estar entre 1 e 26." << endl;
             return false;
         }
-        if (l * c < 3) {
-            cout << "Erro: O jardim e demasiado pequeno para jogar." << endl;
-            cout << "A area total (linhas x colunas) deve ser pelo menos 3." << endl;
-            return false;
-        }
         delete jardim; // eliminar jardim anterior, se existir
         jardim = new Jardim(l,c);
         cout << "Jardim criado com " << l << " linhas e " << c << " colunas." << endl;

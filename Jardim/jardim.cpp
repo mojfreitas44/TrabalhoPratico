@@ -113,7 +113,9 @@ void Jardim::reporFerramenta() {
 
 void Jardim::inicializarFerramentas() {
     int tipoFerramentas = 4;
-    // Vamos por 3 ferramentas no mapa
+    int areaTotal = linhas * colunas;
+    int numeroFerramentas = (areaTotal < 3) ? areaTotal : 3;
+
     for (int i = 0; i < 3; i++) {
         int c, l;
         Solo* soloAlvo;
