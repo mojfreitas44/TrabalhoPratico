@@ -1,7 +1,3 @@
-//
-// Created by Rodrigo on 29/10/2025.
-//
-
 #include "comandoplantas.h"
 #include <string>
 #include <sstream>
@@ -124,6 +120,40 @@ bool ComandoPlanta::executar(Jardim*& jardim, std::stringstream& parametros)  {
             cout << "Nenhuma planta no jardim." << endl;
         }
         return true;
+    }
+
+    else if (nomeComando == "lplanta") {
+        string posStr;
+        if (parametros >> posStr) {
+            try {
+                Posicao p = Posicao::deString(posStr);
+
+                if (p.getLinha() < 0 || p.getLinha() >= jardim->getLinhas() ||
+                    p.getColuna() < 0 || p.getColuna() >= jardim->getColunas()) {
+                    cout << "Posicao fora do jardim." << endl;
+                    return false;
+                }
+
+                Solo* solo = jardim->getSolo(p.getLinha(), p.getColuna());
+                Plantas* planta = solo->getPlanta();
+
+                if (planta != nullptr) {
+                    cout << "--- Planta em " << posStr << " ---" << endl;
+                    cout << "Tipo: " << planta->getTipo() << endl;
+                    cout << "Agua Interna: " << planta->getAgua() << endl;
+                    cout << "Nutrientes Internos: " << planta->getNutrientes() << endl;
+                } else {
+                    cout << "Nao existe nenhuma planta na posicao " << posStr << "." << endl;
+                }
+                return true;
+
+            } catch (const exception& e) {
+                cout << "Posicao invalida." << endl;
+                return false;
+            }
+        }
+        cout << "Parametros em falta. Uso: lplanta <posicao>" << endl;
+        return false;
     }
 
     return false;

@@ -17,7 +17,7 @@ int main() {
     bool executando = true;
     Interpretador interpretador;
     cout << "=== Simulador de Jardim ===" << endl;
-    cout << "Comandos: jardim, entra, sai, e/d/c/b, planta, lplantas, avanca, lferr, lsolo, larga, pega, compra, fim" << endl;
+    cout << "Comandos: jardim, entra, sai, e/d/c/b, planta, lplantas, lplanta, avanca, lferr, lsolo, larea, larga, pega, compra, fim" << endl;
     bool aExecutar = true;
     while(aExecutar) {
         cout << "\n> ";
@@ -39,10 +39,8 @@ int main() {
         if(jardim != nullptr) {
             jardim->desenhar();
         }
-        cout << "Comandos: jardim, entra, sai, e/d/c/b, planta, lplantas, avanca, lferr, lsolo, larga, pega, compra, fim" << endl;
-
+        cout << "Comandos: jardim, entra, sai, e/d/c/b, planta, lplantas, lplanta, avanca, lferr, lsolo, larea, larga, pega, compra, fim" << endl;
     }
-
     delete jardim;
     return 0;
 }
