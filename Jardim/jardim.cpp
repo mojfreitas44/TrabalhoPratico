@@ -1,13 +1,12 @@
 #include <iostream>
 #include "jardim.h"
-#include "../Solo.h"       // Include necessário para .cpp
-#include "../Plantas/plantas.h" // Include necessário para .cpp
-#include "../Ferramentas/ferramentas.h" // Include necessário para .cpp
+#include "../Solo.h"
+#include "../Plantas/plantas.h"
+#include "../Ferramentas/ferramentas.h"
 #include "../Ferramentas/regador.h"
 #include "../Ferramentas/adubo.h"
 #include "../Ferramentas/tesoura.h"
 #include "../Ferramentas/ferramentaZ.h"
-
 
 using namespace std;
 
@@ -21,7 +20,6 @@ Jardim::Jardim(int l, int c) : linhas(l), colunas(c){
     inicializarFerramentas();
 }
 
-
 Jardim::~Jardim() {
     for(int i = 0; i < linhas; i++) {
         delete[] area[i];
@@ -31,30 +29,22 @@ Jardim::~Jardim() {
 }
 
 void Jardim::desenhar() const {
-
-    // 1. RÉGUA SUPERIOR (imprime tudo numa linha, acaba com endl)
     cout << "   ";
     for(int c = 0; c < colunas; c++) {
         cout << " " << static_cast<char>('A' + c);
     }
-    cout << endl; // <-- SÓ 1 endl no fim
+    cout << endl;
 
-    // 2. LINHA SEPARADORA SUPERIOR
     cout << "  +";
     for(int c = 0; c < colunas; c++) {
         cout << "--";
     }
-    cout << "-+" << endl; // <-- SÓ 1 endl no fim
+    cout << "-+" << endl;
 
-    // 3. CONTEÚDO DO JARDIM (O loop principal)
     for(int l = 0; l < linhas; l++) {
-
-        // Imprime a régua da linha (ex: "A |")
         cout << static_cast<char>('A' + l) << " |";
 
-        // Loop das colunas: imprime TODOS os solos dessa linha
         for(int c = 0; c < colunas; c++) {
-
             Solo* solo =  &area[l][c];
 
             if (jardineiro->estaNoJardim() &&
@@ -62,40 +52,40 @@ void Jardim::desenhar() const {
                 jardineiro->getColuna() == c) {
                 cout << " *";
             } else if(solo->getPlanta() != nullptr) {
-                cout << " " << solo->getPlanta()->getTipo();  // 2. Planta
+                cout << " " << solo->getPlanta()->getTipo();
             } else if (solo->getFerramenta() != nullptr) {
-                cout << " " << solo->getFerramenta()->getTipo(); // 3. Ferramenta
+                cout << " " << solo->getFerramenta()->getTipo();
             } else {
-                cout << "  ";  // 4. Vazio
+                cout << "  ";
             }
-            // NENHUM endl aqui dentro
         }
-
-        // Imprime a borda direita e SÓ AGORA salta a linha
         cout << " |" << endl;
     }
 
-    // 4. LINHA SEPARADORA INFERIOR
     cout << "  +";
     for(int c = 0; c < colunas; c++) {
         cout << "--";
     }
-    cout << "-+" << endl; // <-- SÓ 1 endl no fim
+    cout << "-+" << endl;
 }
 
 void Jardim::reporFerramenta() {
     int l, c;
     Solo* soloAlvo;
-
-    // Procura uma posição vazia aleatória
-    // Nota: Num jardim muito cheio isto pode demorar, mas para já serve
+    // Antes: while (!soloAlvo->estaVazio() || ...) -> Bloqueava se houvesse plantas
+    // Agora: while (soloAlvo->getFerramenta() != nullptr) -> Só bloqueia se já houver ferramenta
+    int tentativas = 0;
     do {
         l = rand() % linhas;
         c = rand() % colunas;
         soloAlvo = getSolo(l, c);
-    } while (!soloAlvo->estaVazio() || soloAlvo->getFerramenta() != nullptr);
+        tentativas++;
+        // Proteção extra: se tentar 1000 vezes e não conseguir (jardim cheio de ferramentas), desiste
+        if (tentativas > 1000) return;
 
-    int tipo = rand() % 4; // 0 a 3
+    } while (soloAlvo->getFerramenta() != nullptr);
+
+    int tipo = rand() % 4;
     Ferramentas *novaFerramenta = nullptr;
 
     switch (tipo) {
@@ -107,7 +97,6 @@ void Jardim::reporFerramenta() {
 
     if (novaFerramenta != nullptr) {
         soloAlvo->setFerramenta(novaFerramenta);
-        // cout << "DEBUG: Nova ferramenta apareceu em " << l << "," << c << endl;
     }
 }
 
@@ -119,11 +108,13 @@ void Jardim::inicializarFerramentas() {
     for (int i = 0; i < numeroFerramentas; i++) {
         int c, l;
         Solo* soloAlvo;
+
+        // CORREÇÃO AQUI TAMBÉM:
         do {
             l = rand() % linhas;
             c = rand() % colunas;
             soloAlvo = getSolo(l,c);
-        } while (!soloAlvo->estaVazio() || soloAlvo->getFerramenta() != nullptr);
+        } while (soloAlvo->getFerramenta() != nullptr); // Permite spawnar em cima de plantas (embora no inicio nao existam)
 
         int tipo = rand() % tipoFerramentas;
         Ferramentas *novaFerramenta = nullptr;
@@ -138,41 +129,38 @@ void Jardim::inicializarFerramentas() {
         }
     }
 }
+
 void Jardim::simularInstante() {
-    // Percorre todo o jardim
     for (int l = 0; l < linhas; l++) {
         for (int c = 0; c < colunas; c++) {
             Solo* solo = getSolo(l, c);
 
-            // 1. Se houver planta, ela age
+            // 1. Plantas agem
             if (solo->getPlanta() != nullptr) {
                 solo->getPlanta()->simular(*this, l, c);
             }
 
-            // 2. AÇÃO DA FERRAMENTA (NOVO)
-            // Verifica se o jardineiro está nesta posição e dentro do jardim
+            // 2. Ferramentas agem (se o jardineiro estiver lá)
             if (jardineiro->estaNoJardim() &&
                 jardineiro->getLinha() == l &&
                 jardineiro->getColuna() == c) {
 
                 Ferramentas* fer = jardineiro->getFerramentaNaMao();
                 if (fer != nullptr) {
-                    fer->simular(solo); // A ferramenta atua sobre o solo
+                    fer->simular(solo);
                 }
             }
         }
     }
+
+    // Verificar fim de vida da ferramenta
     if (jardineiro->estaNoJardim()) {
         jardineiro->verificarFerramentaNaMao();
     }
 }
-
 
 Solo* Jardim::getSolo(int linha, int coluna) {
     if(linha >= 0 && linha < linhas && coluna >= 0 && coluna < colunas)
         return &area[linha][coluna];
     return nullptr;
 }
-
-
-
